@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ihsan Bank</title>
+
+  <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
+</head>
+
+<body>
+  <h1 id="welcome">Welcome back, <span>User</span>!</h1>
+  <!-- Login Form -->
+  <section id="login--page">
+    <header>
+      <p id="message">Login to start banking <br>with us</p>
+
+    </header>
+    <main>
+      <form id="login--form">
+        <label id="username--label" for="username--input">Username</label>
+        <input type="text" name="username" id="username--input" required>
+        <label for="password" id="password">Pin</label>
+        <input type="password" name="password" id="password--input" required>
+        <p id="errorMsg">Invalid Username/PIN!</p>
+
+        <div id="rembox--cont">
+          <input type="checkbox" name="remember" id="remember">
+          <label id="remember--label" for="remember" >remember me</label>
+        </div>
+        <div id="login--btn">
+          <button class="login--btn" type="submit">Login</button>
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+    </section>
+    <!-- App UI -->
+    <section id="appUI">
+      <h1>Good Morning, <span id="nameHolder">User</span>!</h1>
+      <h2>Account Menu</h2>
+      <div id="apps--container">
+        <div class="app--items acct--details">Account Information</div>
+        <div class="app--items send--money">Send Money</div>
+        <div class="app--items recent">Recent Transactions</div>
+        <div class="app--items offers">Check Offers</div>
+        <div class="app--items loan--request">Request Loan</div>
+        <div class="app--items help">Get help</div>
+        <div class="app--items about">About Us</div>
+
+      </div>
+    </section>
+    <!-- Account Details Tab -->
+    <section id="acct--details--tab">
+      <div id="acct-details-header">
+        <h1>Account Information</h1>
+      </div>
+  
+      <div class="acct--details--items acct--info">
+        <div class="acct-details-list" >
+          <p class="details-list">Account Name:</p>
+          <p class="details-list points" id="acctName"></p>
+        </div>
+        <div class="acct-details-list" >
+          <p class="details-list">Account Number:</p>
+          <p class="details-list points" id="acctNum"></p>
+        </div>
+        <div class="acct-details-list" >
+          <p class="details-list">Balance:</p>
+          <p class="details-list points" id="acctBal"></p>
+        </div>
+        <div class="acct-details-list" >
+          <p class="details-list">Incomes (This Month):</p>
+          <p class="details-list points" id="acctIns"></p>
+        </div>
+        <div class="acct-details-list" >
+          <p class="details-list">Withdrawals (This Month):</p>
+          <p class="details-list points" id="acctOuts"></p>
+        </div>
+      </div>
+    </section>
+    <!-- SEND MONEY TAB -->
+    <div id="overlay"></div>
+    
+      <div id="input--pin--confirm">
+        <p>Please confirm PIN!</p>
+        <div id="pin--input--field">
+            <p>Your PIN:</p>
+            <input id="pin--input--final" type="password"  required maxlength="4">
+        </div>
+        <div id="confirm--send--btns">
+            <button type="submit">Send</button>
+            <button type="reset">Cancel</button>
+        </div>        
+      </div>
+    
+    <section id="send--money--tab">
+      <div id="account-balance-summary">
+        <p class="acctBal" id="acctBal1">#0000</p>
+      </div>
+      <div id="send-money-form-box">
+        <form id="send--money--form" action="">
+          <label for="send--to">Beneficiary Account Number</label>
+          <input id="ben--input--number" type="number" maxlength="10" required>
+          <label for="send--to">Beneficiary Account Name</label>
+          <input id="ben--acct--name" class="invalid--ben--name" type="text" readonly>
+          <div id="send--amount--tab">
+            <p>Input amount:</p>
+            <input id="send--amount" type="number" required>
+          </div>
+          <div id="pin--input--tab">
+            <p>Confirm PIN:</p>
+            <input id="pin--input" class="enter--pin" type="password"  required maxlength="4">
+          </div>
+          <div id="send--btn--container">
+            <button id="sendBtn" type="submit">Send</button>
+          </div>
+          
+        </form>
+      </div>
+    </section>
+    <section id="recent--trans--page">
+      <div id="recent--trans--header">
+        <h1>Recent Transactions</h1>
+      </div>
+      <div id="recent--all--tabs">
+        <div id="all-transactions-tab"> 
+          <h2  class="rcnt--tabs">All Transactions</h2>
+          <div class="trans all-trans">
+            <p>
+              I. <span class="in-trans">   Deposit</span> <span class="trans-name">John Michael</span> <span class="amount">3000</span>
+            </p>
+            <p>
+              II. <span class="out-trans">Withdrawal</span> <span class="trans-name">Nkunku Tere</span> <span class="amount">8000</span>
+            </p>
+          </div>
+        </div>
+        <div id="deposits--tab"> 
+          <h2  class="rcnt--tabs">Deposits</h2>
+          <div class="trans deposits">
+            <p>
+              I. <span class="in-trans">   Deposit</span> <span class="trans-name">John Michael</span> <span class="amount">3000</span>
+            </p>
+          </div>
+        </div>
+        <div id="withdrawals--tab">
+          <h2 class="rcnt--tabs">Withdrawals</h2>
+          <div class="trans withdrawals">
+            <p>
+              I. <span class="out-trans"> Withdrawal</span> <span class="trans-name">Nkunku Tere</span> <span class="amount">8000</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="config.js"></script>
+  <script src="test.js"></script>
+
+</body>
+</html>
